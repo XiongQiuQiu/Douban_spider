@@ -12,9 +12,10 @@ reload(sys)
 sys.setdefaultencoding('utf-8')
 
 # UA
-hds=[{'User-Agent':'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.6) Gecko/20091201 Firefox/3.5.6'},\
-    {'User-Agent':'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/535.11 (KHTML, like Gecko) Chrome/17.0.963.12 Safari/535.11'},\
-     {'User-Agent': 'Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)'}]
+hds = [{'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11'},\
+       {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:34.0) Gecko/20100101 Firefox/34.0'},\
+       {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36 OPR/26.0.1656.60'},
+       ]
 
 def book_spider(book_tag):
     page_num = 0
@@ -71,6 +72,7 @@ def book_spider(book_tag):
 def spider_start(book_tag_list):
     book_lists = []
     for book_tag in book_tag_list:
+        print book_tag
         book_list = book_spider(book_tag)
         book_list = sorted(book_list, key=lambda x: x[1], reverse=True)
         book_lists.append(book_list)
@@ -104,11 +106,11 @@ if __name__ == '__main__':
     # book_tag_lists = ['心理','判断与决策','算法','数据结构','经济','历史']
     # book_tag_lists = ['传记','哲学','编程','创业','理财','社会学','佛教']
     # book_tag_lists = ['思想','科技','科学','web','股票','爱情','两性']
-    # book_tag_lists = ['计算机','机器学习','linux','android','数据库','互联网']
-    # book_tag_lists = ['数学']
+    book_tag_lists = ['计算机','机器学习','linux','android','数据库','互联网']
+    book_tag_lists = ['数学']
     # book_tag_lists = ['摄影','设计','音乐','旅行','教育','成长','情感','育儿','健康','养生']
     # book_tag_lists = ['商业','理财','管理']
-    book_tag_lists = ['港台']
+    #book_tag_lists = ['港台']
     # book_tag_lists = ['科普','经典','生活','心灵','文学']
     # book_tag_lists = ['科幻','思维','金融']
     #book_tag_lists = ['个人管理', '时间管理', '投资', '文化', '宗教']
